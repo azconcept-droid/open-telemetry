@@ -1,0 +1,28 @@
+services:
+  otel:
+    image: otel/opentelemetry-collector
+    container_name: otel-collector
+    volumes:
+      - ./collector-config.yaml:/etc/otelcol/config.yaml
+    ports:
+      - 4317:4317
+      - 4318:4318
+    networks:
+      - opentelemetry
+    depends_on:
+      - zipkin
+
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - 9411:9411
+    networks:
+      - opentelemetry
+
+# volumes:
+#   postgres_volume:
+#   pgadmin_volume:
+
+networks:
+  opentelemetry:
