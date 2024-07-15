@@ -1,30 +1,16 @@
 /*instrumentation.js*/
-// Require dependencies
-const { NodeSDK } = require('@opentelemetry/sdk-node');
-const { ConsoleSpanExporter } = require('@opentelemetry/sdk-trace-node');
+const opentelemetry = require('@opentelemetry/sdk-node');
 const {
-  getNodeAutoInstrumentations,
-} = require('@opentelemetry/auto-instrumentations-node');
-const {
-  PeriodicExportingMetricReader,
-  ConsoleMetricExporter,
-} = require('@opentelemetry/sdk-metrics');
+    getNodeAutoInstrumentations,
+  } = require('@opentelemetry/auto-instrumentations-node');
+const { ZipkinExporter } = require('@opentelemetry/exporter-zipkin');  
 
-const sdk = new NodeSDK({
-  traceExporter: new ConsoleSpanExporter(),
-  metricReader: new PeriodicExportingMetricReader({
-    exporter: new ConsoleMetricExporter(),
-  }),
-  instrumentations: [getNodeAutoInstrumentations()],
+const sdk = new opentelemetry.NodeSDK({
+    traceExporter: new ZipkinExporter({}),
+    instrumentations: [getNodeAutoInstrumentations()],
 });
 
 sdk.start();
-
-// /*instrumentation.js*/
-// const opentelemetry = require('@opentelemetry/sdk-node');
-// const {
-//   getNodeAutoInstrumentations,
-// } = require('@opentelemetry/auto-instrumentations-node');
 // const {
 //   OTLPTraceExporter,
 // } = require('@opentelemetry/exporter-trace-otlp-proto');
@@ -49,4 +35,3 @@ sdk.start();
 //   }),
 //   instrumentations: [getNodeAutoInstrumentations()],
 // });
-// sdk.start();
