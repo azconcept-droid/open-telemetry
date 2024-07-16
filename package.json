@@ -4,6 +4,10 @@
   "description": "app monitoring",
   "main": "server.js",
   "scripts": {
+    "start:auto": "nodemon --require ./instrumentation.js app.js",
+    "start:manual": "nodemon --require ./manual-instrumentation.js app.js",
+    "start:zipkin": "nodemon --require ./zipkin-instrumentation.js app.js",
+    "start:dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,9 +20,11 @@
     "@opentelemetry/api": "^1.9.0",
     "@opentelemetry/auto-instrumentations-node": "^0.48.0",
     "@opentelemetry/exporter-zipkin": "^1.25.1",
+    "@opentelemetry/resources": "^1.25.1",
     "@opentelemetry/sdk-metrics": "^1.25.1",
     "@opentelemetry/sdk-node": "^0.52.1",
     "@opentelemetry/sdk-trace-node": "^1.25.1",
+    "@opentelemetry/semantic-conventions": "^1.25.1",
     "express": "^4.19.2"
   }
 }
