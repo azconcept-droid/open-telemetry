@@ -22,9 +22,5 @@ services:
     environment:
       - COLLECTOR_ZIPKIN_HOST_PORT=:9411
 
-# volumes:
-#   postgres_volume:
-#   pgadmin_volume:
-
 networks:
   opentelemetry:
