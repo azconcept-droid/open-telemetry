@@ -32,4 +32,3 @@ function rollTheDice(rolls, min, max) {
   }
   
   module.exports = { rollTheDice };
-  

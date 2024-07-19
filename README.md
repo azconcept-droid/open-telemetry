@@ -9,3 +9,5 @@ Monitor your app and track errors
 - [zipkin doc](https://zipkin.io/pages/tracers_instrumentation)
 - [List of Exporters](https://opentelemetry.io/ecosystem/registry/?component=exporter&language=js)
 - [Demo](https://opentelemetry.io/docs/demo/)
+- [Interface SpanExporter API doc](https://open-telemetry.github.io/opentelemetry-js/interfaces/_opentelemetry_sdk_trace_base.SpanExporter.html)
+- [Collector config](https://opentelemetry.io/docs/collector/configuration/)

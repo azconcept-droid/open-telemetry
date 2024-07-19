@@ -4,7 +4,7 @@
   "description": "app monitoring",
   "main": "server.js",
   "scripts": {
-    "start:auto": "nodemon --require ./instrumentation.js app.js",
+    "start:otlp": "nodemon --require ./otlp-exporter-instrumentation.js app.js",
     "start:manual": "nodemon --require ./manual-instrumentation.js app.js",
     "start:zipkin": "nodemon --require ./zipkin-instrumentation.js app.js",
     "start:dev": "nodemon app.js",
@@ -19,6 +19,8 @@
   "dependencies": {
     "@opentelemetry/api": "^1.9.0",
     "@opentelemetry/auto-instrumentations-node": "^0.48.0",
+    "@opentelemetry/exporter-metrics-otlp-proto": "^0.52.1",
+    "@opentelemetry/exporter-trace-otlp-proto": "^0.52.1",
     "@opentelemetry/exporter-zipkin": "^1.25.1",
     "@opentelemetry/resources": "^1.25.1",
     "@opentelemetry/sdk-metrics": "^1.25.1",

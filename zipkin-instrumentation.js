@@ -15,13 +15,16 @@ const { BatchSpanProcessor } = require('@opentelemetry/sdk-trace-base');
 // Custom Span Processor to filter out non-error spans
 class ErrorSpanProcessor extends BatchSpanProcessor {
   onEnd(span) {
+    // console.log(span.status.code)
     if (span.status.code !== 2) { // 2 corresponds to the status code for ERROR
       return;
     }
     super.onEnd(span);
   }
 }
+
 const traceExporter = new ZipkinExporter({})
+
 const errorSpanProcessor = new ErrorSpanProcessor(traceExporter);
 
 const sdk = new opentelemetry.NodeSDK({
