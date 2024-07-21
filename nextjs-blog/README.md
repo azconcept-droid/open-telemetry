@@ -2,6 +2,7 @@
 
 **Resource**
 - [Nextjs + Opentelemetry doc](https://nextjs.org/docs/app/building-your-application/optimizing/open-telemetry)
+- [vercel-otel npm doc](https://www.npmjs.com/package/@vercel/otel)
 
 ## Usage
 1. Start a next.js starter template. This is a starter template for [Learn Next.js](https://nextjs.org/learn).
