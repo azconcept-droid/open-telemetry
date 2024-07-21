@@ -2,6 +2,7 @@
 
 **Resource**
 - [Nextjs + Opentelemetry doc](https://nextjs.org/docs/app/building-your-application/optimizing/open-telemetry)
+- [Quickstart for using the Vercel OpenTelemetry Collector](https://vercel.com/docs/observability/otel-overview)
 - [vercel-otel npm doc](https://www.npmjs.com/package/@vercel/otel)
 
 ## Usage
